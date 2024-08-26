@@ -4,6 +4,7 @@ import numpy as np
 import time
 import json
 import os
+import copy
 from loguru import logger
 import matplotlib.pyplot as plt
 
@@ -12,6 +13,7 @@ from tqdm import tqdm
 # * --- Set up script information -------------------------------------
 script_id_str       = '702_PedestalCalib2'
 script_version_str  = '1.0'
+config_to_modify    = 'config/default_2024Aug_config.json'
 
 # * --- Test function -------------------------------------------------
 def measure_v0(_socket_udp, _ip, _port, _fpga_address, _reg_runLR, _reg_offLR, _event_num, _fragment_life, _logger):
@@ -133,6 +135,21 @@ def chn_pedestal_draw(_mean_list, _err_list, _title, _y_max=512):
     fig.tight_layout()
     return fig
 
+def UniChannelNum2RegKey(i2c_dict, channel_num):
+    for _key in i2c_dict.keys():
+        if "CM_" in _key or "Channel_" in _key or "CALIB_" in _key:
+            _reverse_key = i2c_dict[_key]
+            _key_full = _key
+            if "Channel_" in _key_full:
+                _key_index = int(_key_full.split("_")[-1])
+                _key_full = f"Channel_{_key_index}"
+            while len(_key_full) < 20:
+                _key_full += " "
+            # print (f"{_reverse_key} : {_key_full}")
+            if _reverse_key == channel_num:
+                return _key_full
+    return "Not Found"
+
 # * --- Set up logging ------------------------------------------------
 # Define a custom sink that uses tqdm to write log messages
 class TqdmSink:
@@ -160,7 +177,6 @@ logger.add(
 # * --- Set up output folder -------------------------------------------
 output_dump_path = 'dump'   # dump is for temporary files like config
 output_data_path = 'data'   # data is for very-likely-to-be-used files
-config_to_modify = 'config/default_2024Aug_config.json'
 
 output_folder_name      = f'{script_id_str}_data_{time.strftime("%Y%m%d_%H%M%S")}'
 output_config_json_name = f'{script_id_str}_config_{time.strftime("%Y%m%d_%H%M%S")}.json'
@@ -238,24 +254,81 @@ socket_udp.settimeout(timeout)
 # * ---------------------------------------------------------------------------
 i2c_settings_json_path = "h2gcroc_1v4_r1.json"
 reg_settings = packetlib.RegisterSettings(i2c_settings_json_path)
+i2c_config = json.load(open(i2c_settings_json_path, 'r'))
 
-top_reg_runLR = [0x0B,0x0f,0x40,0x7f,0x00,0x07,0x05,0x00]
-top_reg_offLR = [0x08,0x0f,0x40,0x7f,0x00,0x07,0x05,0x00]
+i2c_dict = {}
+for key in list(i2c_config['I2C_address'].keys()):
+   i2c_dict[key] = i2c_config['I2C_address'][key]
 
-default_global_analog   = reg_settings.get_default_reg_content('registers_global_analog')
-default_global_analog[8]  = 0xA0
-default_global_analog[9]  = 0xCA
-default_global_analog[10] = 0x42
-default_global_analog[14] = 0x6F
+# for num_test in range(90):
+#     print(UniChannelNum2RegKey(i2c_dict, num_test), end=' ')
+#     print(num_test)
 
-default_channel_wise      = reg_settings.get_default_reg_content('registers_channel_wise')
-default_channel_wise[14]  = 0x80
+top_reg = config_json["Register Settings"]["Top                 "]
+# transfer hex string like '00 00 0C' to byte array
+top_reg = [int(x, 16) for x in top_reg.split()]
+top_reg_runLR = top_reg.copy()
+top_reg_runLR[0] = top_reg_runLR[0] | 0x03
+top_reg_runLR = top_reg_runLR[:8]
+top_reg_offLR = top_reg.copy()
+top_reg_offLR[0] = top_reg_offLR[0] & 0xFC
+top_reg_offLR = top_reg_offLR[:8]
 
-default_reference_voltage = reg_settings.get_default_reg_content('registers_reference_voltage')
+# for byte in top_reg_runLR:
+#     print(f"{byte:02X}", end=' ')
+# print()
+# for byte in top_reg_offLR:
+#     print(f"{byte:02X}", end=' ')
+# print()
+
+# default_global_analog   = reg_settings.get_default_reg_content('registers_global_analog')
+# default_global_analog[8]  = 0xA0
+# default_global_analog[9]  = 0xCA
+# default_global_analog[10] = 0x42
+# default_global_analog[14] = 0x6F
+
+default_global_analog_0 = config_json["Register Settings"]["Global_Analog_0     "]
+default_global_analog_1 = config_json["Register Settings"]["Global_Analog_1     "]
+default_global_analog_0 = [int(x, 16) for x in default_global_analog_0.split()]
+default_global_analog_1 = [int(x, 16) for x in default_global_analog_1.split()]
+
+# default_channel_wise      = reg_settings.get_default_reg_content('registers_channel_wise')
+# default_channel_wise[14]  = 0x80
+default_channel_wise = config_json["Register Settings"]["CM_0                "]
+default_channel_wise = [int(x, 16) for x in default_channel_wise.split()]
+
+default_reference_voltage_0 = config_json["Register Settings"]["Reference_Voltage_0 "]
+default_reference_voltage_1 = config_json["Register Settings"]["Reference_Voltage_1 "]
+default_reference_voltage_0 = [int(x, 16) for x in default_reference_voltage_0.split()]
+default_reference_voltage_1 = [int(x, 16) for x in default_reference_voltage_1.split()]
 
 output_config_json["i2c"] = {}
 output_config_json["i2c"]["top_reg_runLR"] = top_reg_runLR
 output_config_json["i2c"]["top_reg_offLR"] = top_reg_offLR
+
+config_output_json_0 = copy.deepcopy(config_json)
+config_output_json_1 = copy.deepcopy(config_json)
+
+# add pedestal calib info
+config_output_json_0["PedestalCalib"] = {
+    "script_id": script_id_str,
+    "script_version": script_version_str,
+    "output_folder": output_folder_name,
+    "output_config_json": output_config_json_name,
+    "output_pedecalib_json": output_pedecalib_json_name
+}
+
+config_output_json_0["Target ASIC"]["ASIC Address"] = 0
+
+config_output_json_1["PedestalCalib"] = {
+    "script_id": script_id_str,
+    "script_version": script_version_str,
+    "output_folder": output_folder_name,
+    "output_config_json": output_config_json_name,
+    "output_pedecalib_json": output_pedecalib_json_name
+}
+
+config_output_json_1["Target ASIC"]["ASIC Address"] = 1
 
 # * --- Set running parameters ------------------------------------------------
 total_asic          = 2
@@ -275,7 +348,6 @@ inputdac_step = 2
 target_pedestal = 80
 
 dead_chn_std_threshold = 5
-
 
 ref_inv_scan_range = range(100, 700, 10)
 trim_scan_range = range(0, 64, 2)
@@ -316,16 +388,17 @@ try:
     for _asic in range(total_asic):
 
         # * --- Global_Analog_0 & Global_Analog_1 ---
-        _global_analog = default_global_analog.copy()
+        _global_analog_0 = default_global_analog_0.copy()
+        _global_analog_1 = default_global_analog_1.copy()
 
-        if not packetlib.send_check_i2c_wrapper(socket_udp, h2gcroc_ip, h2gcroc_port, asic_num=_asic, fpga_addr = fpga_address, sub_addr=packetlib.subblock_address_dict["Global_Analog_0"], reg_addr=0x00, data=_global_analog, retry=5, verbose=i2c_setting_verbose):
+        if not packetlib.send_check_i2c_wrapper(socket_udp, h2gcroc_ip, h2gcroc_port, asic_num=_asic, fpga_addr = fpga_address, sub_addr=packetlib.subblock_address_dict["Global_Analog_0"], reg_addr=0x00, data=_global_analog_0, retry=5, verbose=i2c_setting_verbose):
             logger.warning(f"Failed to set Global_Analog_0 settings for ASIC {_asic}")
-        if not packetlib.send_check_i2c_wrapper(socket_udp, h2gcroc_ip, h2gcroc_port, asic_num=_asic, fpga_addr = fpga_address, sub_addr=packetlib.subblock_address_dict["Global_Analog_1"], reg_addr=0x00, data=_global_analog, retry=5, verbose=i2c_setting_verbose):
+        if not packetlib.send_check_i2c_wrapper(socket_udp, h2gcroc_ip, h2gcroc_port, asic_num=_asic, fpga_addr = fpga_address, sub_addr=packetlib.subblock_address_dict["Global_Analog_1"], reg_addr=0x00, data=_global_analog_1, retry=5, verbose=i2c_setting_verbose):
             logger.warning(f"Failed to set Global_Analog_1 settings for ASIC {_asic}")
         
         # * --- Reference Voltage Half 0 & Half 1 ---
-        _ref_voltage_half0 = default_reference_voltage.copy()
-        _ref_voltage_half1 = default_reference_voltage.copy()
+        _ref_voltage_half0 = default_reference_voltage_0.copy()
+        _ref_voltage_half1 = default_reference_voltage_1.copy()
 
         _ref_voltage_half0[1] = ( _ref_voltage_half0[1] & 0xF0) | ((initial_inv_vref_list[_asic*2] & 0x03) << 2) | (initial_noinv_vref_list[_asic*2] & 0x03)
         _ref_voltage_half1[1] = ( _ref_voltage_half1[1] & 0xF0) | ((initial_inv_vref_list[_asic*2+1] & 0x03) << 2) | (initial_noinv_vref_list[_asic*2+1] & 0x03)
@@ -414,8 +487,8 @@ try:
         progress_bar_inv.set_description(f"InvRef: {_ref_inv}")
 
         for _asic in range(total_asic):
-            _ref_voltage_half0 = default_reference_voltage.copy()
-            _ref_voltage_half1 = default_reference_voltage.copy()
+            _ref_voltage_half0 = default_reference_voltage_0.copy()
+            _ref_voltage_half1 = default_reference_voltage_1.copy()
 
             _ref_voltage_half0[1] = ( _ref_voltage_half0[1] & 0xF0) | ((_ref_inv & 0x03) << 2) | (final_ref_noinv_list[_asic*2] & 0x03)
             _ref_voltage_half1[1] = ( _ref_voltage_half1[1] & 0xF0) | ((_ref_inv & 0x03) << 2) | (final_ref_noinv_list[_asic*2+1] & 0x03)
@@ -488,8 +561,8 @@ try:
 
     # set the final inv ref values
     for _asic in range(total_asic):
-        _ref_voltage_half0 = default_reference_voltage.copy()
-        _ref_voltage_half1 = default_reference_voltage.copy()
+        _ref_voltage_half0 = default_reference_voltage_0.copy()
+        _ref_voltage_half1 = default_reference_voltage_1.copy()
 
         _ref_voltage_half0[1] = ( _ref_voltage_half0[1] & 0xF0) | ((final_ref_inv_list[_asic*2] & 0x03) << 2) | (final_ref_noinv_list[_asic*2] & 0x03)
         _ref_voltage_half1[1] = ( _ref_voltage_half1[1] & 0xF0) | ((final_ref_inv_list[_asic*2+1] & 0x03) << 2) | (final_ref_noinv_list[_asic*2+1] & 0x03)
@@ -661,8 +734,8 @@ try:
             break
 
         for _asic in range(total_asic):
-            _ref_voltage_half0 = default_reference_voltage.copy()
-            _ref_voltage_half1 = default_reference_voltage.copy()
+            _ref_voltage_half0 = default_reference_voltage_0.copy()
+            _ref_voltage_half1 = default_reference_voltage_1.copy()
 
             _ref_voltage_half0[1] = ( _ref_voltage_half0[1] & 0xF0) | ((final_ref_inv_list[_asic*2] & 0x03) << 2) | (final_ref_noinv_list[_asic*2] & 0x03)
             _ref_voltage_half1[1] = ( _ref_voltage_half1[1] & 0xF0) | ((final_ref_inv_list[_asic*2+1] & 0x03) << 2) | (final_ref_noinv_list[_asic*2+1] & 0x03)
@@ -676,6 +749,13 @@ try:
                 logger.warning(f"Failed to set Reference_Voltage_Half_0 settings for ASIC {_asic}")
             if not packetlib.send_check_i2c_wrapper(socket_udp, h2gcroc_ip, h2gcroc_port, asic_num=_asic, fpga_addr = fpga_address, sub_addr=packetlib.subblock_address_dict["Reference_Voltage_1"], reg_addr=0x00, data=_ref_voltage_half1, retry=5, verbose=i2c_setting_verbose):
                 logger.warning(f"Failed to set Reference_Voltage_Half_1 settings for ASIC {_asic}")
+
+            if _asic == 0:
+                config_output_json_0["Register Settings"]["Reference_Voltage_0 "] = ' '.join([f"{x:02X}" for x in _ref_voltage_half0])
+                config_output_json_0["Register Settings"]["Reference_Voltage_1 "] = ' '.join([f"{x:02X}" for x in _ref_voltage_half1])
+            elif _asic == 1:
+                config_output_json_1["Register Settings"]["Reference_Voltage_0 "] = ' '.join([f"{x:02X}" for x in _ref_voltage_half0])
+                config_output_json_1["Register Settings"]["Reference_Voltage_1 "] = ' '.join([f"{x:02X}" for x in _ref_voltage_half1])
 
         time.sleep(0.2)
 
@@ -735,8 +815,6 @@ try:
         if _changed_chn_cnt == 0:
             progress_bar_final_tune.set_description(f"Final Trim Tune Done")
             break
-        # else:
-        #     logger.debug(f"Changed channel count: {_changed_chn_cnt}")
 
         time.sleep(0.2)
 
@@ -765,3 +843,32 @@ with open(output_pedecalib_path, 'w') as f:
 
 with open(output_config_path, 'w') as f:
     json.dump(output_config_json, f, indent=4)
+
+for _chn in range(152):
+    if _chn not in channel_not_used and _chn not in dead_channels:
+        _asic_num = _chn // 76
+        _chn_num  = _chn % 76
+        _sub_addr = packetlib.uni_chn_to_subblock_list[_chn_num]
+
+        _chn_wise = default_channel_wise.copy()
+        _chn_wise[0] = final_chn_inputdac_list[_chn] & 0x3F
+        _chn_wise[3] = (final_chn_trim_list[_chn] << 2) & 0xFC
+
+        chn_key = UniChannelNum2RegKey(i2c_dict, _sub_addr)
+        print(f"Channel register key: {chn_key} for chn {_chn} in asic {_asic_num} with sub addr {_sub_addr}")
+        if _asic_num == 0:
+            config_output_json_0["Register Settings"][chn_key] = ' '.join([f"{x:02X}" for x in _chn_wise])
+        elif _asic_num == 1:
+            config_output_json_1["Register Settings"][chn_key] = ' '.join([f"{x:02X}" for x in _chn_wise])
+
+# save config json to the output folder
+time_data_saving = time.strftime("%Y%m%d_%H%M%S", time.localtime())
+file_0_name = 'config_pede_a0_' + time_data_saving + '.json'
+file_1_name = 'config_pede_a1_' + time_data_saving + '.json'
+output_json_0_file_name = os.path.join(output_dump_folder, file_0_name)
+output_json_1_file_name = os.path.join(output_dump_folder, file_1_name)
+with open(output_json_0_file_name, 'w') as f:
+    json.dump(config_output_json_0, f, indent=4)
+
+with open(output_json_1_file_name, 'w') as f:
+    json.dump(config_output_json_1, f, indent=4)
