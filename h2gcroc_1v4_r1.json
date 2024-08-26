@@ -1,0 +1,4646 @@
+{
+    "version": "1.0",
+    "I2C_address": {
+        "CM_2": 0,
+        "CM_3": 1,
+        "Channel_36": 2,
+        "Channel_37": 3,
+        "Channel_38": 4,
+        "Channel_39": 5,
+        "Channel_40": 6,
+        "Channel_41": 7,
+        "Channel_42": 8,
+        "Channel_43": 9,
+        "Channel_44": 10,
+        "Channel_45": 11,
+        "Channel_46": 12,
+        "Channel_47": 13,
+        "Channel_48": 14,
+        "Channel_49": 15,
+        "Channel_50": 16,
+        "Channel_51": 17,
+        "Channel_52": 18,
+        "Channel_53": 19,
+        "Channel_54": 20,
+        "Channel_55": 21,
+        "Channel_56": 22,
+        "Channel_57": 23,
+        "Channel_58": 24,
+        "Channel_59": 25,
+        "Channel_60": 26,
+        "Channel_61": 27,
+        "Channel_62": 28,
+        "Channel_63": 29,
+        "Channel_64": 30,
+        "Channel_65": 31,
+        "Channel_66": 32,
+        "Channel_67": 33,
+        "Channel_68": 34,
+        "Channel_69": 35,
+        "Channel_70": 36,
+        "Channel_71": 37,
+        "CALIB_1": 38,
+
+        "Reference_Voltage_1": 40,
+        "Global_Analog_1": 41,
+        "Master_TDC_1": 42,
+        "Digital_Half_1": 43,
+        "HalfWise_1": 44,
+        "Top": 45,
+        "CM_0": 46,
+        "CM_1": 47,
+        "Channel_00": 48,
+        "Channel_01": 49,
+        "Channel_02": 50,
+        "Channel_03": 51,
+        "Channel_04": 52,
+        "Channel_05": 53,
+        "Channel_06": 54,
+        "Channel_07": 55,
+        "Channel_08": 56,
+        "Channel_09": 57,
+        "Channel_10": 58,
+        "Channel_11": 59,
+        "Channel_12": 60,
+        "Channel_13": 61,
+        "Channel_14": 62,
+        "Channel_15": 63,
+        "Channel_16": 64,
+        "Channel_17": 65,
+        "Channel_18": 66,
+        "Channel_19": 67,
+        "Channel_20": 68,
+        "Channel_21": 69,
+        "Channel_22": 70,
+        "Channel_23": 71,
+        "Channel_24": 72,
+        "Channel_25": 73,
+        "Channel_26": 74,
+        "Channel_27": 75,
+        "Channel_28": 76,
+        "Channel_29": 77,
+        "Channel_30": 78,
+        "Channel_31": 79,
+        "Channel_32": 80,
+        "Channel_33": 81,
+        "Channel_34": 82,
+        "Channel_35": 83,
+        "CALIB_0": 84,
+
+        "Reference_Voltage_0": 86,
+        "Global_Analog_0": 87,
+        "Master_TDC_0": 88,
+        "Digital_Half_0": 89,
+        "HalfWise_0": 90
+    },
+    "registers_top": [
+        {
+            "register_0": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "RunR",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "RunL",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "TestMode",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "n_counter_rst",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "EdgeSel_T1",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "in_inv_cmd_rx",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "PreL1AOffset<0>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "PreL1AOffset<1>",
+                    "description": ""
+                }
+            ],
+            "register_1": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "EN_PLL",
+                    "description": "Activate the PLL to provide the different internal clks:\n '0': OFF: No clk, power off channels \n '1': ON: PLL activated"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "DIV_PLL<0>",
+                    "description": "Choose the OUT_CLK_SEL_READ output frequency:\n '00': 40MHz \n '10': 160MHz \n '01': 320MHz \n '11': 1280MHz"
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "DIV_PLL<1>",
+                    "description": "Choose the OUT_CLK_SEL_READ output frequency:\n '00': 40MHz \n '10': 160MHz \n '01': 320MHz \n '11': 1280MHz"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "FOLLOWER_PLL_EN",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "sel_strobe_ext",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "sel_40M_ext",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "sel_error",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "sel_lock",
+                    "description": ""
+                }
+            ],
+            "register_2": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "VOUT_INIT_EXT_EN",
+                    "description": "Activate the DAC for V_PUMP_P voltage:\n '0': external PAD \"VOUT_INIT_EXT_PLL\" \n '1': 5 bits DAC \"VOUT_INIT_EXT_D<0:4>\""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "VOUT_INIT_EXT_D<0>",
+                    "description": "5 bits DAC for VOUT_INIT PLL voltage:\n '0000' = 0 V\n '1111' = 1.2 V"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "VOUT_INIT_EXT_D<1>",
+                    "description": "5 bits DAC for VOUT_INIT PLL voltage:\n '0000' = 0 V\n '1111' = 1.2 V"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "VOUT_INIT_EXT_D<2>",
+                    "description": "5 bits DAC for VOUT_INIT PLL voltage:\n '0000' = 0 V\n '1111' = 1.2 V"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "VOUT_INIT_EXT_D<3>",
+                    "description": "5 bits DAC for VOUT_INIT PLL voltage:\n '0000' = 0 V\n '1111' = 1.2 V"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "VOUT_INIT_EXT_D<4>",
+                    "description": "5 bits DAC for VOUT_INIT PLL voltage:\n '0000' = 0 V\n '1111' = 1.2 V"
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "EN_REF_BG",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "VOUR_INIT_EN",
+                    "description": ""
+                }
+            ],
+            "register_3": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "EN_HIGH_CAPA",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "BIAS_I_PLL_D<0>",
+                    "description": "Configure the VTC the bias PLL BIAS_N_PLL bias (pump charge injection current):\nCurrent = DATA<0:5> Weight addition (default 30uA)"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "BIAS_I_PLL_D<1>",
+                    "description": "Configure the VTC the bias PLL BIAS_N_PLL bias (pump charge injection current):\nCurrent = DATA<0:5> Weight addition (default 30uA)"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "BIAS_I_PLL_D<2>",
+                    "description": "Configure the VTC the bias PLL BIAS_N_PLL bias (pump charge injection current):\nCurrent = DATA<0:5> Weight addition (default 30uA)"
+                },{
+                    "bit_number": 4,
+                    "default_value": 1,
+                    "name": "BIAS_I_PLL_D<3>",
+                    "description": "Configure the VTC the bias PLL BIAS_N_PLL bias (pump charge injection current):\nCurrent = DATA<0:5> Weight addition (default 30uA)"
+                },{
+                    "bit_number": 5,
+                    "default_value": 1,
+                    "name": "BIAS_I_PLL_D<4>",
+                    "description": "Configure the VTC the bias PLL BIAS_N_PLL bias (pump charge injection current):\nCurrent = DATA<0:5> Weight addition (default 30uA)"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "BIAS_I_PLL_D<5>",
+                    "description": "Configure the VTC the bias PLL BIAS_N_PLL bias (pump charge injection current):\nCurrent = DATA<0:5> Weight addition (default 30uA)"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "EN_RCG",
+                    "description": ""
+                }
+            ],
+            "register_4":[
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "INIT_DAC_EN",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "INIT_D<0>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "INIT_D<1>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "INIT_D<2>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "INIT_D<3>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "INIT_D<4>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "rcg_gain<0>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "rcg_gain<1>",
+                    "description": ""
+                }
+            ],
+            "register_5":[
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "EN1",
+                    "description": "Current value of the CLPS drivers\n (Data/Trigger)"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "EN2",
+                    "description": "Current value of the CLPS drivers\n (Data/Trigger)"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "EN3",
+                    "description": "Current value of the CLPS drivers\n (Data/Trigger)"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "EN-pE0",
+                    "description": "Current value of the CLPS pre-emphasis driver\n (Data/Trigger)"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "EN-pE1",
+                    "description": "Current value of the CLPS pre-emphasis driver\n (Data/Trigger)"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "EN-pE2",
+                    "description": "Current value of the CLPS pre-emphasis driver\n (Data/Trigger)"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "S0",
+                    "description": "Delay value of the CLPS pre-emphasis driver\n (Data/Trigger)"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "S1",
+                    "description": "Delay value of the CLPS pre-emphasis driver\n (Data/Trigger)"
+                }
+            ],
+            "register_6": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "EN_LOCK_CONTROL",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "ERROR_LIMIT_SC<0>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "ERROR_LIMIT_SC<1>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "ERROR_LIMIT_SC<2>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "PLL_Locked_sc",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "EN_probe_pll",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "EN_PhaseShift",
+                    "description": ""
+                }
+            ],
+            "register_7": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "phase_ck<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "phase_ck<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "phase_ck<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "phase_ck<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "phase_strobe<0>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "phase_strobe<1>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "phase_strobe<2>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "phase_strobe<3>",
+                    "description": ""
+                }
+            ],
+            "register_8": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "bit_out<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "bit_out<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "bit_out<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "bit_out<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "bit_out<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "bit_out<5>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "bit_out<6>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "bit_out<7>",
+                    "description": ""
+                }
+            ],
+            "register_9": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "bit_in<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "bit_in<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "bit_in<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "bit_in<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "bit_in<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "bit_in<5>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "bit_in<6>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "bit_in<7>",
+                    "description": ""
+                }
+            ],
+            "register_10": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "bit_out<8>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "bit_out<9>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "bit_out<10>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "bit_out<11>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "bit_out<12>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "bit_out<13>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "bit_out<14>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "bit_out<15>",
+                    "description": ""
+                }
+            ],
+            "register_11": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "bit_in<8>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "bit_in<9>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "bit_in<10>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "bit_in<11>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "bit_in<12>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "bit_in<13>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "bit_in<14>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "bit_in<15>",
+                    "description": ""
+                }
+            ],
+            "register_12": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "bit_out<16>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "bit_out<17>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "bit_out<18>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "bit_out<19>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "bit_out<20>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "bit_out<21>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "bit_out<22>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "bit_out<23>",
+                    "description": ""
+                }
+            ],
+            "register_13": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "bit_in<16>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "bit_in<17>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "bit_in<18>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "bit_in<19>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "bit_in<20>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "bit_in<21>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "bit_in<22>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "bit_in<23>",
+                    "description": ""
+                }
+            ],
+            "register_14": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "bit_out<24>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "bit_out<25>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "bit_out<26>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "bit_out<27>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "bit_out<28>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "bit_out<29>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "bit_out<30>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "srout",
+                    "description": ""
+                }
+            ],
+            "register_15": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "bit_in<24>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "bit_in<25>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "bit_in<26>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "bit_in<27>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "bit_in<28>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "bit_in<29>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "bit_in<30>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "bit_in<31>",
+                    "description": ""
+                }
+            ],
+            "register_16": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "statusR<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "statusR<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "statusR<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "statusR<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "statusL<0>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "statusL<1>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "statusL<2>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "statusL<3>",
+                    "description": ""
+                }
+            ],
+            "register_17": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "lock_count<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "lock_count<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "lock_count<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "lock_count<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "lock_count<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "lock_count<5>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "lock_count<6>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "lock_count<7>",
+                    "description": ""
+                }
+            ],
+            "register_18": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "fc_error_count<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "fc_error_count<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "fc_error_count<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "fc_error_count<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "fc_error_count<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "fc_error_count<5>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "fc_error_count<6>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "fc_error_count<7>",
+                    "description": ""
+                }
+            ],
+            "register_19": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "err_countL<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "err_countL<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "err_countL<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "err_countL<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "err_countL<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "err_countL<5>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "err_countL<6>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "err_countL<7>",
+                    "description": ""
+                }
+            ],
+            "register_20": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "err_countR<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "err_countR<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "err_countR<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "err_countR<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "err_countR<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "err_countR<5>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "err_countR<6>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "err_countR<7>",
+                    "description": ""
+                }
+            ]
+        }
+    ],
+    "registers_channel_wise": [
+        {
+            "register_0": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Inputdac<0>",
+                    "description": "Input DAC value"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Inputdac<1>",
+                    "description": "Input DAC value"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Inputdac<2>",
+                    "description": "Input DAC value"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Inputdac<3>",
+                    "description": "Input DAC value"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Inputdac<4>",
+                    "description": "Input DAC value"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Inputdac<5>",
+                    "description": "Input DAC value"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Gain_conv<0>",
+                    "description": "Conveyor Gain:\n <0> = 0.025, <1> = 0.05"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Gain_conv<1>",
+                    "description": "Conveyor Gain:\n <0> = 0.025, <1> = 0.05"
+                }
+            ],
+            "register_1": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "mask_toa",
+                    "description": "TOA discri output mask:\n '1' = masked"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "sel_trig_toa",
+                    "description": "External trigger selection for TOA:\n '0' = Ext Trig 1;\n '1' = Ext Trig 2"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "trim_toa<0>",
+                    "description": "Local 5b-DAC for TOA threshold tuning"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "trim_toa<1>",
+                    "description": "Local 5b-DAC for TOA threshold tuning"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "trim_toa<2>",
+                    "description": "Local 5b-DAC for TOA threshold tuning"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "trim_toa<3>",
+                    "description": "Local 5b-DAC for TOA threshold tuning"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "trim_toa<4>",
+                    "description": "Local 5b-DAC for TOA threshold tuning"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "trim_toa<5>",
+                    "description": "Local 5b-DAC for TOA threshold tuning"
+                }
+            ],
+            "register_2": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "trim_tot<0>",
+                    "description": "Local 5b-DAC for TOT threshold tuning"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "trim_tot<1>",
+                    "description": "Local 5b-DAC for TOT threshold tuning"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "trim_tot<2>",
+                    "description": "Local 5b-DAC for TOT threshold tuning"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "trim_tot<3>",
+                    "description": "Local 5b-DAC for TOT threshold tuning"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "trim_tot<4>",
+                    "description": "Local 5b-DAC for TOT threshold tuning"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "trim_tot<5>",
+                    "description": "Local 5b-DAC for TOT threshold tuning"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "trim_tot<6>",
+                    "description": "Local 5b-DAC for TOT threshold tuning"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "trim_tot<7>",
+                    "description": "Local 5b-DAC for TOT threshold tuning"
+                }
+            ],
+            "register_3": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "probe_inv",
+                    "description": "Inverter amplifier output probe"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "probe_noinv",
+                    "description": "Non inverter amplifier output probe"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "trim_inv<0>",
+                    "description": "Local 5b-DAC for ADC pedestal tuning"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "trim_inv<1>",
+                    "description": "Local 5b-DAC for ADC pedestal tuning"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "trim_inv<2>",
+                    "description": "Local 5b-DAC for ADC pedestal tuning"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "trim_inv<3>",
+                    "description": "Local 5b-DAC for ADC pedestal tuning"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "trim_inv<4>",
+                    "description": "Local 5b-DAC for ADC pedestal tuning"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "trim_inv<5>",
+                    "description": "Local 5b-DAC for ADC pedestal tuning"
+                }
+            ],
+            "register_4": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "probe_pa",
+                    "description": "Preamplifier output probe"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "LowRange",
+                    "description": "0.5pF injection cap"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "HighRange",
+                    "description": "8pF injection cap"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Channel_off",
+                    "description": "'1' = preamplifier input tied to ground"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "sel_trig_tot",
+                    "description": "External trigger selection for TOT:\n '0' = Ext Trig 1;\n '1' = Ext Trig 2"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "mask_tot",
+                    "description": "TOT discri output mask:\n '1' = masked"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "probe_tot",
+                    "description": "TOT discri output probe"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "probe_toa",
+                    "description": "TOA discri output probe"
+                }
+            ],
+            "register_5": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "DAC_CAL_CTDC_TOT<0>",
+                    "description": "Tune the fine gain of the TOT CTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_P and the\n sign 1 bit <5>\n VD_P CAL = VD_P + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_P)"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "DAC_CAL_CTDC_TOT<1>",
+                    "description": "Tune the fine gain of the TOT CTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_P and the\n sign 1 bit <5>\n VD_P CAL = VD_P + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_P)"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "DAC_CAL_CTDC_TOT<2>",
+                    "description": "Tune the fine gain of the TOT CTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_P and the\n sign 1 bit <5>\n VD_P CAL = VD_P + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_P)"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "DAC_CAL_CTDC_TOT<3>",
+                    "description": "Tune the fine gain of the TOT CTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_P and the\n sign 1 bit <5>\n VD_P CAL = VD_P + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_P)"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "DAC_CAL_CTDC_TOT<4>",
+                    "description": "Tune the fine gain of the TOT CTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_P and the\n sign 1 bit <5>\n VD_P CAL = VD_P + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_P)"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "DAC_CAL_CTDC_TOT<5>",
+                    "description": "Tune the fine gain of the TOT CTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_P and the\n sign 1 bit <5>\n VD_P CAL = VD_P + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_P)"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "mask_adc",
+                    "description": "'1' = ADC clock off"
+                }
+            ],
+            "register_6": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "DAC_CAL_CTDC_TOA<0>",
+                    "description": "Tune the fine gain of the TOA CTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_P and the\n sign 1 bit <5>\n VD_P CAL = VD_P + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_P)"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "DAC_CAL_CTDC_TOA<1>",
+                    "description": "Tune the fine gain of the TOA CTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_P and the\n sign 1 bit <5>\n VD_P CAL = VD_P + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_P)"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "DAC_CAL_CTDC_TOA<2>",
+                    "description": "Tune the fine gain of the TOA CTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_P and the\n sign 1 bit <5>\n VD_P CAL = VD_P + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_P)"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "DAC_CAL_CTDC_TOA<3>",
+                    "description": "Tune the fine gain of the TOA CTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_P and the\n sign 1 bit <5>\n VD_P CAL = VD_P + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_P)"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "DAC_CAL_CTDC_TOA<4>",
+                    "description": "Tune the fine gain of the TOA CTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_P and the\n sign 1 bit <5>\n VD_P CAL = VD_P + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_P)"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "DAC_CAL_CTDC_TOA<5>",
+                    "description": "Tune the fine gain of the TOA CTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_P and the\n sign 1 bit <5>\n VD_P CAL = VD_P + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_P)"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "HZ_noinv",
+                    "description": "x"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "HZ_inv",
+                    "description": "x"
+                }
+            ],
+            "register_7": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "DAC_CAL_FTDC_TOT<0>",
+                    "description": "Tune the fine gain of the TOT FTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_N and the\n sign 1 bit <5>\n VD_N CAL = VD_N + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_N)"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "DAC_CAL_FTDC_TOT<1>",
+                    "description": "Tune the fine gain of the TOT FTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_N and the\n sign 1 bit <5>\n VD_N CAL = VD_N + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_N)"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "DAC_CAL_FTDC_TOT<2>",
+                    "description": "Tune the fine gain of the TOT FTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_N and the\n sign 1 bit <5>\n VD_N CAL = VD_N + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_N)"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "DAC_CAL_FTDC_TOT<3>",
+                    "description": "Tune the fine gain of the TOT FTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_N and the\n sign 1 bit <5>\n VD_N CAL = VD_N + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_N)"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "DAC_CAL_FTDC_TOT<4>",
+                    "description": "Tune the fine gain of the TOT FTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_N and the\n sign 1 bit <5>\n VD_N CAL = VD_N + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_N)"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "DAC_CAL_FTDC_TOT<5>",
+                    "description": "Tune the fine gain of the TOT FTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_N and the\n sign 1 bit <5>\n VD_N CAL = VD_N + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_N)"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                }
+            ],
+            "register_8": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "DAC_CAL_FTDC_TOA<0>",
+                    "description": "Tune the fine gain of the TOA FTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_N and the\n sign 1 bit <5>\n VD_N CAL = VD_N + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_N)"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "DAC_CAL_FTDC_TOA<1>",
+                    "description": "Tune the fine gain of the TOA FTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_N and the\n sign 1 bit <5>\n VD_N CAL = VD_N + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_N)"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "DAC_CAL_FTDC_TOA<2>",
+                    "description": "Tune the fine gain of the TOA FTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_N and the\n sign 1 bit <5>\n VD_N CAL = VD_N + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_N)"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "DAC_CAL_FTDC_TOA<3>",
+                    "description": "Tune the fine gain of the TOA FTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_N and the\n sign 1 bit <5>\n VD_N CAL = VD_N + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_N)"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "DAC_CAL_FTDC_TOA<4>",
+                    "description": "Tune the fine gain of the TOA FTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_N and the\n sign 1 bit <5>\n VD_N CAL = VD_N + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_N)"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "DAC_CAL_FTDC_TOA<5>",
+                    "description": "Tune the fine gain of the TOA FTDC: 5 bits:\n DAC<0:4> (1kOhm x 32) by the\n BIAS_CAL_DAC_N and the\n sign 1 bit <5>\n VD_N CAL = VD_N + (sign<5> x <0:4> x 1kOhm x BIAS_CAL_DAC_N)"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                }
+            ],
+            "register_9": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "IN_FTDC_ENCODER_TOA<0>",
+                    "description": "Adjust the ToA FTDC offset by 5 bits\n<0:4> and the sign 1 bit <5>\nOFFSET = FTDC_TDC<0:5> + (sign<5> x\n DATA<0:4>)"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "IN_FTDC_ENCODER_TOA<1>",
+                    "description": "Adjust the ToA FTDC offset by 5 bits\n<0:4> and the sign 1 bit <5>\nOFFSET = FTDC_TDC<0:5> + (sign<5> x\n DATA<0:4>)"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "IN_FTDC_ENCODER_TOA<2>",
+                    "description": "Adjust the ToA FTDC offset by 5 bits\n<0:4> and the sign 1 bit <5>\nOFFSET = FTDC_TDC<0:5> + (sign<5> x\n DATA<0:4>)"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "IN_FTDC_ENCODER_TOA<3>",
+                    "description": "Adjust the ToA FTDC offset by 5 bits\n<0:4> and the sign 1 bit <5>\nOFFSET = FTDC_TDC<0:5> + (sign<5> x\n DATA<0:4>)"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "IN_FTDC_ENCODER_TOA<4>",
+                    "description": "Adjust the ToA FTDC offset by 5 bits\n<0:4> and the sign 1 bit <5>\nOFFSET = FTDC_TDC<0:5> + (sign<5> x\n DATA<0:4>)"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "IN_FTDC_ENCODER_TOA<5>",
+                    "description": "Adjust the ToA FTDC offset by 5 bits\n<0:4> and the sign 1 bit <5>\nOFFSET = FTDC_TDC<0:5> + (sign<5> x\n DATA<0:4>)"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                }
+            ],
+            "register_10": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "IN_FTDC_ENCODER_TOT<0>",
+                    "description": "Adjust the ToT FTDC offset by 5 bits\n<0:4> and the sign 1 bit <5>\nOFFSET = FTDC_TDC<0:5> + (sign<5> x\n DATA<0:4>)"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "IN_FTDC_ENCODER_TOT<1>",
+                    "description": "Adjust the ToT FTDC offset by 5 bits\n<0:4> and the sign 1 bit <5>\nOFFSET = FTDC_TDC<0:5> + (sign<5> x\n DATA<0:4>)"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "IN_FTDC_ENCODER_TOT<2>",
+                    "description": "Adjust the ToT FTDC offset by 5 bits\n<0:4> and the sign 1 bit <5>\nOFFSET = FTDC_TDC<0:5> + (sign<5> x\n DATA<0:4>)"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "IN_FTDC_ENCODER_TOT<3>",
+                    "description": "Adjust the ToT FTDC offset by 5 bits\n<0:4> and the sign 1 bit <5>\nOFFSET = FTDC_TDC<0:5> + (sign<5> x\n DATA<0:4>)"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "IN_FTDC_ENCODER_TOT<4>",
+                    "description": "Adjust the ToT FTDC offset by 5 bits\n<0:4> and the sign 1 bit <5>\nOFFSET = FTDC_TDC<0:5> + (sign<5> x\n DATA<0:4>)"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "IN_FTDC_ENCODER_TOT<5>",
+                    "description": "Adjust the ToT FTDC offset by 5 bits\n<0:4> and the sign 1 bit <5>\nOFFSET = FTDC_TDC<0:5> + (sign<5> x\n DATA<0:4>)"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "DIS_TDC",
+                    "description": "'1' = TDC clocks off"
+                }
+            ],
+            "register_11":[
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "ExtData<8>",
+                    "description": "Forced ADC data, bits 9 & 8"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "ExtData<9>",
+                    "description": "Forced ADC data, bits 9 & 8"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "mask_AlignBuffer",
+                    "description": "'1' = AlignBuffer clock off"
+                }
+            ],
+            "register_12": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Adc_pedestal<0>",
+                    "description": "ADC pedestal value"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Adc_pedestal<1>",
+                    "description": "ADC pedestal value"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Adc_pedestal<2>",
+                    "description": "ADC pedestal value"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Adc_pedestal<3>",
+                    "description": "ADC pedestal value"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Adc_pedestal<4>",
+                    "description": "ADC pedestal value"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Adc_pedestal<5>",
+                    "description": "ADC pedestal value"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Adc_pedestal<6>",
+                    "description": "ADC pedestal value"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Adc_pedestal<7>",
+                    "description": "ADC pedestal value"
+                }
+            ],
+            "register_13": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "ExtData<0>",
+                    "description": "Forced ADC data, bits 7 to 0"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "ExtData<1>",
+                    "description": "Forced ADC data, bits 7 to 0"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "ExtData<2>",
+                    "description": "Forced ADC data, bits 7 to 0"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "ExtData<3>",
+                    "description": "Forced ADC data, bits 7 to 0"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "ExtData<4>",
+                    "description": "Forced ADC data, bits 7 to 0"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "ExtData<5>",
+                    "description": "Forced ADC data, bits 7 to 0"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "ExtData<6>",
+                    "description": "Forced ADC data, bits 7 to 0"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "ExtData<7>",
+                    "description": "Forced ADC data, bits 7 to 0"
+                }
+            ],
+            "register_14": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "dacb<0>",
+                    "description": "Current dac for preamp DC current\ncompensation"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "dacb<1>",
+                    "description": "Current dac for preamp DC current\ncompensation"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "dacb<2>",
+                    "description": "Current dac for preamp DC current\ncompensation"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "dacb<3>",
+                    "description": "Current dac for preamp DC current\ncompensation"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "dacb<4>",
+                    "description": "Current dac for preamp DC current\ncompensation"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "dacb<5>",
+                    "description": "Current dac for preamp DC current\ncompensation"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "sign_dac",
+                    "description": "Sign for Current dac for preamp DC\ncurrent compensation"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "sign_dac",
+                    "description": "Conveyor Gain: <2> = 0.1"
+                }
+            ]
+        }
+    ],
+    "registers_global_analog": [
+        {
+            "register_0": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "ON_dac_trim",
+                    "description": "'1' = enable DC trimming bias"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "ON_input_dac",
+                    "description": "'1' = enable input DAC bias"
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "ON_conv",
+                    "description": "'1' = enable conveyor bias"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "ON_pa",
+                    "description": "'1' = enable preamp bias"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "ldac_tot<0>",
+                    "description": "x"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "ldac_tot<1>",
+                    "description": "x"
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "ldac_tot<2>",
+                    "description": "x"
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "Gain_conv<3>",
+                    "description": "Conveyor Gain: <3> = 0.2"
+                }
+            ],
+            "register_1": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "ON_rtr",
+                    "description": "'1' = enable shaper amplifiers bias"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "Sw_super_conv",
+                    "description": "'1' = enable preamp fast output bias"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "ldac_inv<0>",
+                    "description": "x"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "ldac_inv<1>",
+                    "description": "x"
+                },{
+                    "bit_number": 4,
+                    "default_value": 1,
+                    "name": "ldac_inv<2>",
+                    "description": "x"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Dacb_vb_conv<0>",
+                    "description": "Conveyor current bias"
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "Dacb_vb_conv<1>",
+                    "description": "Conveyor current bias"
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "Dacb_vb_conv<2>",
+                    "description": "Conveyor current bias"
+                }
+            ],
+            "register_2": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "ON_toa",
+                    "description": "'1' = enable TOA discri bias"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "ON_tot",
+                    "description": "'1' = enable TOT discri bias"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Dacb_vbi_pa<0>",
+                    "description": "6b-DAC for preamp input stage current tuning"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Dacb_vbi_pa<1>",
+                    "description": "6b-DAC for preamp input stage current tuning"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Dacb_vbi_pa<2>",
+                    "description": "6b-DAC for preamp input stage current tuning"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Dacb_vbi_pa<3>",
+                    "description": "6b-DAC for preamp input stage current tuning"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Dacb_vbi_pa<4>",
+                    "description": "6b-DAC for preamp input stage current tuning"
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "Dacb_vbi_pa<5>",
+                    "description": "6b-DAC for preamp input stage current tuning"
+                }
+            ],
+            "register_3": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "lbi_sk<0>",
+                    "description": "S-K amplifier input stage current"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "lbi_sk<1>",
+                    "description": "S-K amplifier input stage current"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "lbo_sk<0>",
+                    "description": "S-K amplifier output stage current"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "lbo_sk<1>",
+                    "description": "S-K amplifier output stage current"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "lbo_sk<2>",
+                    "description": "S-K amplifier output stage current"
+                },{
+                    "bit_number": 5,
+                    "default_value": 1,
+                    "name": "lbo_sk<3>",
+                    "description": "S-K amplifier output stage current"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "lbo_sk<4>",
+                    "description": "S-K amplifier output stage current"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "lbo_sk<5>",
+                    "description": "S-K amplifier output stage current"
+                }
+            ],
+            "register_4": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "lbi_inv<0>",
+                    "description": "Inverter amplifier input stage current"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "lbi_inv<1>",
+                    "description": "Inverter amplifier input stage current"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "lbo_inv<0>",
+                    "description": "Inverter amplifier output stage current"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "lbo_inv<1>",
+                    "description": "Inverter amplifier output stage current"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "lbo_inv<2>",
+                    "description": "Inverter amplifier output stage current"
+                },{
+                    "bit_number": 5,
+                    "default_value": 1,
+                    "name": "lbo_inv<3>",
+                    "description": "Inverter amplifier output stage current"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "lbo_inv<4>",
+                    "description": "Inverter amplifier output stage current"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "lbo_inv<5>",
+                    "description": "Inverter amplifier output stage current"
+                }
+            ],
+            "register_5": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "lbi_noinv<0>",
+                    "description": "Non Inverter amplifier input stage current"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "lbi_noinv<1>",
+                    "description": "Non Inverter amplifier input stage current"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "lbo_noinv<0>",
+                    "description": "Non Inverter amplifier output stage current"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "lbo_noinv<1>",
+                    "description": "Non Inverter amplifier output stage current"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "lbo_noinv<2>",
+                    "description": "Non Inverter amplifier output stage current"
+                },{
+                    "bit_number": 5,
+                    "default_value": 1,
+                    "name": "lbo_noinv<3>",
+                    "description": "Non Inverter amplifier output stage current"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "lbo_noinv<4>",
+                    "description": "Non Inverter amplifier output stage current"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "lbo_noinv<5>",
+                    "description": "Non Inverter amplifier output stage current"
+                }
+            ],
+            "register_6": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "lbi_inv_buf<0>",
+                    "description": "Inverter buffer input stage current"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "lbi_inv_buf<1>",
+                    "description": "Inverter buffer input stage current"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "lbo_inv_buf<0>",
+                    "description": "Inverter buffer output stage current"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "lbo_inv_buf<1>",
+                    "description": "Inverter buffer output stage current"
+                },{
+                    "bit_number": 4,
+                    "default_value": 1,
+                    "name": "lbo_inv_buf<2>",
+                    "description": "Inverter buffer output stage current"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "lbo_inv_buf<3>",
+                    "description": "Inverter buffer output stage current"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "lbo_inv_buf<4>",
+                    "description": "Inverter buffer output stage current"
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "lbo_inv_buf<5>",
+                    "description": "Inverter buffer output stage current"
+                }
+            ],
+            "register_7": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "lbi_noinv_buf<0>",
+                    "description": "Non Inverter buffer input stage current"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "lbi_noinv_buf<1>",
+                    "description": "Non Inverter buffer input stage current"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "lbo_noinv_buf<0>",
+                    "description": "Non Inverter buffer output stage current"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "lbo_noinv_buf<1>",
+                    "description": "Non Inverter buffer output stage current"
+                },{
+                    "bit_number": 4,
+                    "default_value": 1,
+                    "name": "lbo_noinv_buf<2>",
+                    "description": "Non Inverter buffer output stage current"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "lbo_noinv_buf<3>",
+                    "description": "Non Inverter buffer output stage current"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "lbo_noinv_buf<4>",
+                    "description": "Non Inverter buffer output stage current"
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "lbo_noinv_buf<5>",
+                    "description": "Non Inverter buffer output stage current"
+                }
+            ],
+            "register_8": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "Cd<0>",
+                    "description": "Internal capacitors in:\n <0>=5pF; <1>=10pF; <2>=20pF"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "Cd<1>",
+                    "description": "Internal capacitors in:\n <0>=5pF; <1>=10pF; <2>=20pF"
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "Cd<2>",
+                    "description": "Internal capacitors in:\n <0>=5pF; <1>=10pF; <2>=20pF"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "En_hyst_tot",
+                    "description": "'1' = enable the TOT discri hysteresis"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Cf_comp<0>",
+                    "description": "Preamp feedback comp. cap.\n <0> = 50fF, <1> = 100fF\n <2> = 200fF, <3> = 400fF"
+                },{
+                    "bit_number": 5,
+                    "default_value": 1,
+                    "name": "Cf_comp<1>",
+                    "description": "Preamp feedback comp. cap.\n <0> = 50fF, <1> = 100fF\n <2> = 200fF, <3> = 400fF"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Cf_comp<2>",
+                    "description": "Preamp feedback comp. cap.\n <0> = 50fF, <1> = 100fF\n <2> = 200fF, <3> = 400fF"
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "Cf_comp<3>",
+                    "description": "Preamp feedback comp. cap.\n <0> = 50fF, <1> = 100fF\n <2> = 200fF, <3> = 400fF"
+                }
+            ], 
+            "register_9": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Cf<0>",
+                    "description": "Preamp feedback cap.\n <0> = 50fF, <1> = 100fF\n <2> = 200fF, <3> = 400fF"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "Cf<1>",
+                    "description": "Preamp feedback cap.\n <0> = 50fF, <1> = 100fF\n <2> = 200fF, <3> = 400fF"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Cf<2>",
+                    "description": "Preamp feedback cap.\n <0> = 50fF, <1> = 100fF\n <2> = 200fF, <3> = 400fF"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "Cf<3>",
+                    "description": "Preamp feedback cap.\n <0> = 50fF, <1> = 100fF\n <2> = 200fF, <3> = 400fF"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Rf<0>",
+                    "description": "Preamp feedback Res.\n <0> = 100K, <1> = 66.66K\n <2> = 50K, <3> = 25K"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Rf<1>",
+                    "description": "Preamp feedback Res.\n <0> = 100K, <1> = 66.66K\n <2> = 50K, <3> = 25K"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Rf<2>",
+                    "description": "Preamp feedback Res.\n <0> = 100K, <1> = 66.66K\n <2> = 50K, <3> = 25K"
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "Rf<3>",
+                    "description": "Preamp feedback Res.\n <0> = 100K, <1> = 66.66K\n <2> = 50K, <3> = 25K"
+                }
+            ],
+            "register_10":[
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "Ref_pa_cm<0>",
+                    "description": "Configuration of the reference voltage in the\ncompensation common mode channel:\n <00> = ~158mV, <01> = ~205mV\n <10> = ~205mV, <11> = ~246mV"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "Ref_pa_cm<1>",
+                    "description": "Configuration of the reference voltage in the\ncompensation common mode channel:\n <00> = ~158mV, <01> = ~205mV\n <10> = ~205mV, <11> = ~246mV"
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "ON_backup",
+                    "description": "'1' = disable compensation with common\nmode channel (err)"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "SelExtADC",
+                    "description": "'1' = Forced ADC data send to the DRAM (err)"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Clr_ADC",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "S_sk<0>",
+                    "description": "S-K amp Miller cap.\n <0> =50fF, <1> = 100fF,\n <2> = 200fF"
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "S_sk<1>",
+                    "description": "S-K amp Miller cap.\n <0> =50fF, <1> = 100fF,\n <2> = 200fF"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "S_sk<2>",
+                    "description": "S-K amp Miller cap.\n <0> =50fF, <1> = 100fF,\n <2> = 200fF"
+                }
+            ],
+            "register_11": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Clr_ShaperTail",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "SelRisingEdge",
+                    "description": "'1' = AlignBuffer provides data on rising edge (err)"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "S_inv<0>",
+                    "description": "Inverter amp Miller cap.\n <0> = 50fF, <1> = 100fF,\n <2> = 200fF"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "S_inv<1>",
+                    "description": "Inverter amp Miller cap.\n <0> = 50fF, <1> = 100fF,\n <2> = 200fF"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "S_inv<2>",
+                    "description": "Inverter amp Miller cap.\n <0> = 50fF, <1> = 100fF,\n <2> = 200fF"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "S_noinv<0>",
+                    "description": "Non Inverter amp Miller cap.\n <0> = 50fF, <1> = 100fF,\n <2> = 200fF"
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "S_noinv<1>",
+                    "description": "Non Inverter amp Miller cap.\n <0> = 50fF, <1> = 100fF,\n <2> = 200fF"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "S_noinv<2>",
+                    "description": "Non Inverter amp Miller cap.\n <0> = 50fF, <1> = 100fF,\n <2> = 200fF"
+                }
+            ],
+            "register_12": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "Dacb_dynran<0>",
+                    "description": "Configuration of dacb dynamic range"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "Dacb_dynran<1>",
+                    "description": "Configuration of dacb dynamic range"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "S_inv_buf<0>",
+                    "description": "Inverter buffer Miller cap.\n <0> = 100fF, <1> = 200fF,\n <2> = 400fF"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "S_inv_buf<1>",
+                    "description": "Inverter buffer Miller cap.\n <0> = 100fF, <1> = 200fF,\n <2> = 400fF"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "S_inv_buf<2>",
+                    "description": "Inverter buffer Miller cap.\n <0> = 100fF, <1> = 200fF,\n <2> = 400fF"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "S_noinv_buf<0>",
+                    "description": "Non Inverter buffer Miller cap.\n <0> = 100fF, <1> = 200fF,\n <2> = 400fF"
+                },
+                {
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "S_noinv_buf<1>",
+                    "description": "Non Inverter buffer Miller cap.\n <0> = 100fF, <1> = 200fF,\n <2> = 400fF"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "S_noinv_buf<2>",
+                    "description": "Non Inverter buffer Miller cap.\n <0> = 100fF, <1> = 200fF,\n <2> = 400fF"
+                }
+            ],
+            "register_13": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "ref_adc<0>",
+                    "description": "Input stage current of the Ref ADC OTA"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "ref_adc<1>",
+                    "description": "Input stage current of the Ref ADC OTA"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Delay40<0>",
+                    "description": "Delay tuning for bits <4:0>\n \"000\" = faster conversion"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Delay40<1>",
+                    "description": "Delay tuning for bits <4:0>\n \"000\" = faster conversion"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Delay40<2>",
+                    "description": "Delay tuning for bits <4:0>\n \"000\" = faster conversion"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Delay65<0>",
+                    "description": "Delay tuning for bits <6:5>\n \"000\" = faster conversion"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Delay65<1>",
+                    "description": "Delay tuning for bits <6:5>\n \"000\" = faster conversion"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Delay65<2>",
+                    "description": "Delay tuning for bits <6:5>\n \"000\" = faster conversion"
+                }
+            ],
+            "register_14": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "ON_ref_adc",
+                    "description": "'1' = enable ADCref OTA"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Delay87<0>",
+                    "description": "Delay tuning for bits <8:7>\n \"000\" = faster conversion"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Delay87<1>",
+                    "description": "Delay tuning for bits <8:7>\n \"000\" = faster conversion"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Delay87<2>",
+                    "description": "Delay tuning for bits <8:7>\n \"000\" = faster conversion"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Delay9<0>",
+                    "description": "Delay tuning for bits <9>\n \"000\" = faster conversion"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Delay9<1>",
+                    "description": "Delay tuning for bits <9>\n \"000\" = faster conversion"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Delay9<2>",
+                    "description": "Delay tuning for bits <9>\n \"000\" = faster conversion"
+                }
+            ]
+        }
+    ],
+    "registers_reference_voltage": [
+        {
+            "register_0": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "Refi<0>",
+                    "description": "Bandgap current tuning"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "Refi<1>",
+                    "description": "Bandgap current tuning"
+                },{
+                    "bit_number": 4,
+                    "default_value": 1,
+                    "name": "Vbg_1v<0>",
+                    "description": "1 V bandgap ref. runing"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Vbg_1v<1>",
+                    "description": "1 V bandgap ref. runing"
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "Vbg_1v<2>",
+                    "description": "1 V bandgap ref. runing"
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "ON_dac",
+                    "description": "'1' = enable DACs"
+                }
+            ],
+            "register_1": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Noinv_vref<0>",
+                    "description": "Non Inverter shaper global reference <1:0>"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Noinv_vref<1>",
+                    "description": "Non Inverter shaper global reference <1:0>"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Inv_vref<0>",
+                    "description": "Inverter shaper global reference <1:0>"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Inv_vref<1>",
+                    "description": "Inverter shaper global reference <1:0>"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Toa_vref<0>",
+                    "description": "TOA threshold global value <1:0>"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Toa_vref<1>",
+                    "description": "TOA threshold global value <1:0>"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Tot_vref<0>",
+                    "description": "TOT threshold global value <1:0>"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Tot_vref<1>",
+                    "description": "TOT threshold global value <1:0>"
+                }
+            ],
+            "register_2": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Tot_vref<2>",
+                    "description": "TOT threshold global value"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Tot_vref<3>",
+                    "description": "TOT threshold global value"
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "Tot_vref<4>",
+                    "description": "TOT threshold global value"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "Tot_vref<5>",
+                    "description": "TOT threshold global value"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Tot_vref<6>",
+                    "description": "TOT threshold global value"
+                },{
+                    "bit_number": 5,
+                    "default_value": 1,
+                    "name": "Tot_vref<7>",
+                    "description": "TOT threshold global value"
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "Tot_vref<8>",
+                    "description": "TOT threshold global value"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Tot_vref<9>",
+                    "description": "TOT threshold global value"
+                }
+            ],
+            "register_3": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Toa_vref<2>",
+                    "description": "TOA threshold global value"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Toa_vref<3>",
+                    "description": "TOA threshold global value"
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "Toa_vref<4>",
+                    "description": "TOA threshold global value"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "Toa_vref<5>",
+                    "description": "TOA threshold global value"
+                },{
+                    "bit_number": 4,
+                    "default_value": 1,
+                    "name": "Toa_vref<6>",
+                    "description": "TOA threshold global value"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Toa_vref<7>",
+                    "description": "TOA threshold global value"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Toa_vref<8>",
+                    "description": "TOA threshold global value"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Toa_vref<9>",
+                    "description": "TOA threshold global value"
+                }
+            ],
+            "register_4": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Inv_vref<2>",
+                    "description": "Inverter shaper global reference"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Inv_vref<3>",
+                    "description": "Inverter shaper global reference"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Inv_vref<4>",
+                    "description": "Inverter shaper global reference"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Inv_vref<5>",
+                    "description": "Inverter shaper global reference"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Inv_vref<6>",
+                    "description": "Inverter shaper global reference"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Inv_vref<7>",
+                    "description": "Inverter shaper global reference"
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "Inv_vref<8>",
+                    "description": "Inverter shaper global reference"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Inv_vref<9>",
+                    "description": "Inverter shaper global reference"
+                }
+            ],
+            "register_5": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "Noinv_vref<2>",
+                    "description": "Non Inverter shaper global reference"
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "Noinv_vref<3>",
+                    "description": "Non Inverter shaper global reference"
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "Noinv_vref<4>",
+                    "description": "Non Inverter shaper global reference"
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "Noinv_vref<5>",
+                    "description": "Non Inverter shaper global reference"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Noinv_vref<6>",
+                    "description": "Non Inverter shaper global reference"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Noinv_vref<7>",
+                    "description": "Non Inverter shaper global reference"
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "Noinv_vref<8>",
+                    "description": "Non Inverter shaper global reference"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Noinv_vref<9>",
+                    "description": "Non Inverter shaper global reference"
+                }
+            ],
+            "register_6": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Calib<0>",
+                    "description": "Calibration DAC value"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Calib<1>",
+                    "description": "Calibration DAC value"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Calib<2>",
+                    "description": "Calibration DAC value"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Calib<3>",
+                    "description": "Calibration DAC value"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Calib<4>",
+                    "description": "Calibration DAC value"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Calib<5>",
+                    "description": "Calibration DAC value"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Calib<6>",
+                    "description": "Calibration DAC value"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Calib<7>",
+                    "description": "Calibration DAC value"
+                }
+            ],
+            "register_7": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Calib<8>",
+                    "description": "Calibration DAC value"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Calib<9>",
+                    "description": "Calibration DAC value"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Calib<10>",
+                    "description": "Calibration DAC value"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Calib<11>",
+                    "description": "Calibration DAC value"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "IntCtest",
+                    "description": "Selection of the Calibration DAC"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "ExtCtest",
+                    "description": "Selection of the external pulse DAC"
+                }
+            ],
+            "register_8": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "probe_dc<0>",
+                    "description": "Value for probe dc selected"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "probe_dc<1>",
+                    "description": "Value for probe dc selected"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "probe_dc<2>",
+                    "description": "Value for probe dc selected"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "probe_dc<3>",
+                    "description": "Value for probe dc selected"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "probe_dc<4>",
+                    "description": "Value for probe dc selected"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "probe_dc1_0",
+                    "description": "Selection of probe dc1_0"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "probe_dc1_1",
+                    "description": "Selection of probe dc1_1"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "probe_dc2",
+                    "description": "Selection of probe dc2"
+                }
+            ],
+            "register_9": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Calib_2V5<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Calib_2V5<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Calib_2V5<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Calib_2V5<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Calib_2V5<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Calib_2V5<5>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Calib_2V5<6>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Calib_2V5<7>",
+                    "description": ""
+                }
+            ],
+            "register_10": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Calib_2V5<8>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Calib_2V5<9>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Calib_2V5<10>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Calib_2V5<11>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "ExtCtest_2V5",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "choice_cinj",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "cmd_120p",
+                    "description": ""
+                }
+            ]
+        }
+    ],
+    "registers_master_tdc": [
+        {
+            "register_0": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "GLOBAL_TA_SELECT_GAIN_TOA<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "GLOBAL_TA_SELECT_GAIN_TOA<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "GLOBAL_TA_SELECT_GAIN_TOA<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "GLOBAL_TA_SELECT_GAIN_TOA<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 1,
+                    "name": "GLOBAL_TA_SELECT_GAIN_TOT<0>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 1,
+                    "name": "GLOBAL_TA_SELECT_GAIN_TOT<1>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "GLOBAL_TA_SELECT_GAIN_TOT<2>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "GLOBAL_TA_SELECT_GAIN_TOT<3>",
+                    "description":""
+                }
+            ],
+            "register_1": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "GLOBAL_MODE_NO_TOT_SUB",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "GLOBAL_LATENCY_TIME<0>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "GLOBAL_LATENCY_TIME<1>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "GLOBAL_LATENCY_TIME<2>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 1,
+                    "name": "GLOBAL_LATENCY_TIME<3>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "GLOBAL_MODE_FTDC_TOA_S0",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "GLOBAL_MODE_FTDC_TOA_S1",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "GLOBAL_SEU_TIME_OUT",
+                    "description":""
+                }
+            ],
+            "register_2": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "GLOBAL_FOLLOWER_CAL_P_CTDC_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "GLOBAL_FOLLOWER_CAL_P_CTDC_D<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "GLOBAL_FOLLOWER_CAL_P_CTDC_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "GLOBAL_FOLLOWER_CAL_P_CTDC_D<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "GLOBAL_FOLLOWER_CAL_P_CTDC_EN",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "INV_FRONT_40MHZ",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "START_COUNTER",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "CALIB_CHANNEL_DLL",
+                    "description":""
+                }
+            ],
+            "register_3": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "VD_CTDC_P_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "VD_CTDC_P_D<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "VD_CTDC_P_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "VD_CTDC_P_D<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "VD_CTDC_P_D<4>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "VD_CTDC_P_DAC_EN",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "EN_MASTER_CTDC_VOUT_INIT",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "EN_MASTER_CTDC_DLL",
+                    "description":""
+                }
+            ],
+            "register_4": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "BIAS_CAL_DAC_CTDC_P_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "BIAS_CAL_DAC_CTDC_P_D<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "CTDC_CALIB_FREQUENCY<0>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "CTDC_CALIB_FREQUENCY<1>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "CTDC_CALIB_FREQUENCY<2>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "CTDC_CALIB_FREQUENCY<3>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "CTDC_CALIB_FREQUENCY<4>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "CTDC_CALIB_FREQUENCY<5>",
+                    "description":""
+                }
+            ],
+            "register_5": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "GLOBAL_MODE_TOA_DIRECT_OUTPUT",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "BIAS_I_CTDC_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "BIAS_I_CTDC_D<1>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "BIAS_I_CTDC_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 1,
+                    "name": "BIAS_I_CTDC_D<3>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 1,
+                    "name": "BIAS_I_CTDC_D<4>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "BIAS_I_CTDC_D<5>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "FOLLOWER_CTDC_EN",
+                    "description":""
+                }
+            ],
+            "register_6": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "GLOBAL_EN_BUFFER_CTDC",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "VD_CTDC_N_FORCE_MAX",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "VD_CTDC_N_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "VD_CTDC_N_D<1>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "VD_CTDC_N_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "VD_CTDC_N_D<3>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "VD_CTDC_N_D<4>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "VD_CTDC_N_DAC_EN",
+                    "description":""
+                }
+            ],
+            "register_7": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "CTRL_IN_REF_CTDC_P_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "CTRL_IN_REF_CTDC_P_D<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "CTRL_IN_REF_CTDC_P_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "CTRL_IN_REF_CTDC_P_D<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "CTRL_IN_REF_CTDC_P_D<4>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "CTRL_IN_REF_CTDC_P_EN",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "BIAS_CAL_DAC_CTDC_P_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "BIAS_CAL_DAC_CTDC_P_D<3>",
+                    "description":""
+                }
+            ],
+            "register_8": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "CTRL_IN_SIG_CTDC_P_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "CTRL_IN_SIG_CTDC_P_D<1>",
+                    "description":""
+                },{
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "CTRL_IN_SIG_CTDC_P_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "CTRL_IN_SIG_CTDC_P_D<3>",
+                    "description":""
+                },{
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "CTRL_IN_SIG_CTDC_P_D<4>",
+                    "description":""
+                },{
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "CTRL_IN_SIG_CTDC_P_EN",
+                    "description":""
+                },{
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "GLOBAL_INIT_DAC_B_CTDC",
+                    "description":""
+                },{
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "BIAS_CAL_DAC_CTDC_P_EN",
+                    "description":""
+                }
+            ],
+            "register_9": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "VD_FTDC_P_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "VD_FTDC_P_D<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "VD_FTDC_P_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "VD_FTDC_P_D<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "VD_FTDC_P_D<4>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "VD_FTDC_P_DAC_EN",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "EN_MASTER_FTDC_VOUT_INIT",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "EN_MASTER_FTDC_DLL",
+                    "description":""
+                }
+            ],
+            "register_10":[
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "BIAS_FOLLOWER_CAL_P_FTDC_EN",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "FTDC_CALIB_FREQUENCY<0>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "FTDC_CALIB_FREQUENCY<1>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "FTDC_CALIB_FREQUENCY<2>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "FTDC_CALIB_FREQUENCY<3>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "FTDC_CALIB_FREQUENCY<4>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "FTDC_CALIB_FREQUENCY<5>",
+                    "description":""
+                }
+            ],
+            "register_11": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "EN_REF_BG",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "BIAS_I_FTDC_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "BIAS_I_FTDC_D<1>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "BIAS_I_FTDC_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 1,
+                    "name": "BIAS_I_FTDC_D<3>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 1,
+                    "name": "BIAS_I_FTDC_D<4>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "BIAS_I_FTDC_D<5>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "FOLLOWER_FTDC_EN",
+                    "description":""
+                }
+            ],
+            "register_12": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "GLOBAL_EN_BUFFER_FTDC",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "VD_FTDC_N_FORCE_MAX",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "VD_FTDC_N_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "VD_FTDC_N_D<1>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "VD_FTDC_N_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "VD_FTDC_N_D<3>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "VD_FTDC_N_D<4>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "VD_FTDC_N_DAC_EN",
+                    "description":""
+                }
+            ],
+            "register_13": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "CTRL_IN_SIG_FTDC_P_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "CTRL_IN_SIG_FTDC_P_D<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "CTRL_IN_SIG_FTDC_P_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "CTRL_IN_SIG_FTDC_P_D<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "CTRL_IN_SIG_FTDC_P_D<4>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "CTRL_IN_SIG_FTDC_P_EN",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "BIAS_FOLLOWER_CAL_P_FTDC_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "BIAS_FOLLOWER_CAL_P_FTDC_D<1>",
+                    "description":""
+                }
+            ],
+            "register_14": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "CTRL_IN_REF_FTDC_P_D<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "CTRL_IN_REF_FTDC_P_D<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "CTRL_IN_REF_FTDC_P_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "CTRL_IN_REF_FTDC_P_D<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "CTRL_IN_REF_FTDC_P_D<4>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "CTRL_IN_REF_FTDC_P_EN",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "BIAS_FOLLOWER_CAL_P_FTDC_D<2>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "BIAS_FOLLOWER_CAL_P_FTDC_D<3>",
+                    "description":""
+                }
+            ],
+            "register_15": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "GLOBAL_DISABLE_TOT_LIMIT",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "GLOBAL_FORCE_EN_CLK",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "GLOBAL_FORCE_EN_OUTPUT_DATA",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "GLOBAL_FORCE_EN_TOT",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "GLOBAL_EN_TOT_PRIORITY",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "GLOBAL_EN_TUNE_GAIN_DAC",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "sel_clk_rcg<0>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "sel_clk_rcg<1>",
+                    "description":""
+                }
+            ]
+        }
+    ],
+    "registers_digital_half": [
+        {
+            "register_0": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<4>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<5>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<6>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<7>",
+                    "description":""
+                }
+            ],
+            "register_1": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<8>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<9>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<10>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<11>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<12>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<13>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<14>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<15>",
+                    "description":""
+                }
+            ],
+            "register_2": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<16>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<17>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<18>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<19>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<20>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<21>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<22>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<23>",
+                    "description":""
+                }
+            ],
+            "register_3": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<24>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<25>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<26>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<27>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<28>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<29>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<30>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<31>",
+                    "description":""
+                }
+            ],
+            "register_4": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<32>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<33>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<34>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "ClrAdcTot_trig<35>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Top_P_Add",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "SC_testRAM",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "CalibrationSC",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "SelTC4",
+                    "description":""
+                }
+            ],
+            "register_5": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Tot_TH3<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Tot_TH3<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Tot_TH3<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Tot_TH3<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Tot_TH3<4>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Tot_TH3<5>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Tot_TH3<6>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Tot_TH3<7>",
+                    "description":""
+                }
+            ],
+            "register_6": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Tot_TH2<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Tot_TH2<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Tot_TH2<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Tot_TH2<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Tot_TH2<4>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Tot_TH2<5>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Tot_TH2<6>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Tot_TH2<7>",
+                    "description":""
+                }
+            ],
+            "register_7": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Tot_TH1<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Tot_TH1<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Tot_TH1<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Tot_TH1<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Tot_TH1<4>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Tot_TH1<5>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Tot_TH1<6>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Tot_TH1<7>",
+                    "description":""
+                }
+            ],
+            "register_8": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Tot_TH0<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Tot_TH0<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Tot_TH0<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Tot_TH0<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Tot_TH0<4>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Tot_TH0<5>",
+                    "description":""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Tot_TH0<6>",
+                    "description":""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Tot_TH0<7>",
+                    "description":""
+                }
+            ],
+            "register_9": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Tot_P3<0>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Tot_P3<1>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Tot_P3<2>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Tot_P3<3>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Tot_P3<4>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Tot_P3<5>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Tot_P3<6>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                }
+            ],
+            "register_10": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Tot_P2<0>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Tot_P2<1>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Tot_P2<2>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Tot_P2<3>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Tot_P2<4>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Tot_P2<5>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Tot_P2<6>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                }
+            ],
+            "register_11": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Tot_P1<0>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Tot_P1<1>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Tot_P1<2>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Tot_P1<3>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Tot_P1<4>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Tot_P1<5>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Tot_P1<6>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                }
+            ],
+            "register_12": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Tot_P0<0>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Tot_P0<1>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Tot_P0<2>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Tot_P0<3>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Tot_P0<4>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Tot_P0<5>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Tot_P0<6>",
+                    "description": "TOT pedestal used in TP (common to 9\nchannels"
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                }
+            ],
+            "register_13": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "MultFactor<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "MultFactor<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "MultFactor<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "MultFactor<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 1,
+                    "name": "MultFactor<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                }
+            ],
+            "register_14": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Adc_TH<0>",
+                    "description":""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Adc_TH<1>",
+                    "description":""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Adc_TH<2>",
+                    "description":""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Adc_TH<3>",
+                    "description":""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Adc_TH<4>",
+                    "description":""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "L1Offset<8>",
+                    "description": ""
+                }
+            ],
+            "register_15": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "L1Offset<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "L1Offset<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "L1Offset<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "L1Offset<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "L1Offset<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "L1Offset<5>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "L1Offset<6>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "L1Offset<7>",
+                    "description": ""
+                }
+            ],
+            "register_16": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "IdleFrame<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "IdleFrame<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "IdleFrame<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "IdleFrame<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "IdleFrame<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "IdleFrame<5>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "IdleFrame<6>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "IdleFrame<7>",
+                    "description": ""
+                }
+            ],
+            "register_17": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "IdleFrame<8>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "IdleFrame<9>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "IdleFrame<10>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "IdleFrame<11>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "IdleFrame<12>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "IdleFrame<13>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "IdleFrame<14>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "IdleFrame<15>",
+                    "description": ""
+                }
+            ],
+            "register_18": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "IdleFrame<16>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "IdleFrame<17>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "IdleFrame<18>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "IdleFrame<19>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "IdleFrame<20>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "IdleFrame<21>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "IdleFrame<22>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "IdleFrame<23>",
+                    "description": ""
+                }
+            ],
+            "register_19": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "IdleFrame<24>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "IdleFrame<25>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "IdleFrame<26>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "IdleFrame<27>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "NA",
+                    "description": ""
+                }
+            ],
+            "register_20": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "sc_testRAM<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "sc_testRAM<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "sc_testRAM<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "sc_testRAM<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "sc_testRAM<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "sc_testRAM<5>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "sc_testRAM<6>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "sc_testRAM<7>",
+                    "description": ""
+                }
+            ],
+            "register_21": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "sc_testRAM<8>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "sc_testRAM<9>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "sc_testRAM<10>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "sc_testRAM<11>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "sc_testRAM<12>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "sc_testRAM<13>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "sc_testRAM<14>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "sc_testRAM<15>",
+                    "description": ""
+                }
+            ],
+            "register_22": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "sc_testRAM<16>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "sc_testRAM<17>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "sc_testRAM<18>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "sc_testRAM<19>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "sc_testRAM<20>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "sc_testRAM<21>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "sc_testRAM<22>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "sc_testRAM<23>",
+                    "description": ""
+                }
+            ],
+            "register_23": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "sc_testRAM<24>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "sc_testRAM<25>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "sc_testRAM<26>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "sc_testRAM<27>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "sc_testRAM<28>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "sc_testRAM<29>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 1,
+                    "name": "sc_testRAM<30>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 1,
+                    "name": "sc_testRAM<31>",
+                    "description": ""
+                }
+            ],
+            "register_24": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "Bx_trigger<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 1,
+                    "name": "Bx_trigger<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 1,
+                    "name": "Bx_trigger<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 1,
+                    "name": "Bx_trigger<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Bx_trigger<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Bx_trigger<5>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Bx_trigger<6>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Bx_trigger<7>",
+                    "description": ""
+                }
+            ],
+            "register_25": [
+                {
+                    "bit_number": 0,
+                    "default_value": 1,
+                    "name": "Bx_offset<0>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Bx_offset<1>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Bx_offset<2>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Bx_offset<3>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Bx_offset<4>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Bx_offset<5>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Bx_offset<6>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Bx_offset<7>",
+                    "description": ""
+                }
+            ],
+            "register_26": [
+                {
+                    "bit_number": 0,
+                    "default_value": 0,
+                    "name": "Bx_offset<8>",
+                    "description": ""
+                },{
+                    "bit_number": 1,
+                    "default_value": 0,
+                    "name": "Bx_offset<9>",
+                    "description": ""
+                },{
+                    "bit_number": 2,
+                    "default_value": 0,
+                    "name": "Bx_offset<10>",
+                    "description": ""
+                },{
+                    "bit_number": 3,
+                    "default_value": 0,
+                    "name": "Bx_offset<11>",
+                    "description": ""
+                },{
+                    "bit_number": 4,
+                    "default_value": 0,
+                    "name": "Bx_trigger<8>",
+                    "description": ""
+                },{
+                    "bit_number": 5,
+                    "default_value": 0,
+                    "name": "Bx_trigger<9>",
+                    "description": ""
+                },{
+                    "bit_number": 6,
+                    "default_value": 0,
+                    "name": "Bx_trigger<10>",
+                    "description": ""
+                },{
+                    "bit_number": 7,
+                    "default_value": 0,
+                    "name": "Bx_trigger<11>",
+                    "description": ""
+                }
+            ]
+        }
+    ]
+}

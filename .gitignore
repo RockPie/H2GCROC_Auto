@@ -1,0 +1,12 @@
+dump/*
+test/*
+data/*
+*.temp
+*.log
+*.tmp 
+.DS_Store
+test*.txt
+test.png
+test*.png
+*.txt
+test.png
